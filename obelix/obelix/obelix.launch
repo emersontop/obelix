@@ -1,0 +1,22 @@
+<launch>
+    <!--para o obelix-->
+
+    
+    <!-- <node name="encoders" pkg="obelix" type="encoders.py" output="screen"/>
+    <node name="controller_2" pkg="obelix" type="controller_base_2.py" output="screen"/>
+    <node name="velocidades_plotter" pkg="obelix" type="grafico.py" output="screen"/> -->
+
+    <node name="encoders" pkg="obelix" type="encoders.py" output="screen"/>
+
+    <node name="controller_base" pkg="obelix" type="controller_base.py" output="screen"/>
+
+    <node name="lidar" pkg="obelix" type="plot_ydlidar_test.py" output="screen"/>
+
+    <node name="servo_motor" pkg="obelix" type="servo_motor.py" output="screen"/>
+
+    <node name="decision_maker" pkg="obelix" type="decision_maker.py" output="screen"/>
+
+    <node name="camera_srvs" pkg="obelix" type="camera_srvs.py" output="screen"/>
+
+
+</launch>

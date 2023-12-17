@@ -1,0 +1,48 @@
+login: emerson
+senha: admin
+hostname -I
+ip:172.22.67.160
+conexão_ssh: ssh emerson@172.22.67.160
+
+comando para transferir diretórios
+sudo scp -r obelix emerson@172.22.67.160:\catkin_ws/src
+
+comando transferir aqruivos
+sudo scp servo.py emerson@172.22.67.160:\catkin_ws/src/robo1/src
+
+source ~/catkin_ws/devel/setup.bash
+
+Ros multi machines
+ssh orin5@172.17.0.1
+ssh emerson@172.22.67.160
+
+orin
+export ROS_MASTER_URI=http://172.22.74.224:11311
+export ROS_IP=172.17.0.1
+rosrun rospy_tutorials listener.py
+
+rasp
+export ROS_MASTER_URI=http://172.22.74.224:11311
+export ROS_IP=172.22.67.160
+rosrun rospy_tutorials talker.py
+
+instalação opencv https://littlebirdelectronics.com.au/guides/165/set-up-opencv-on-raspberry-pi-4
+instalação do cvbridge sudo apt-get ros-noetic-cv-bridge
+
+instalar o RPI.GPIO
+
+
+Dar acesso de sudo
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
+
+packge name obelix
+
+sudo groupadd gpio
+sudo usermod -a -G gpio user_name
+sudo grep gpio /etc/group
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
+
+sudo -s
+source ./catkin_ws/devel/setup.bash 
